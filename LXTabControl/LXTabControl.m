@@ -151,12 +151,12 @@
         if (index < self.tabItems.count) {
             LXTabItemView *button = [self.tabItems objectAtIndex:index];
             
-            if (self.contentSize.width > SCREEN_WIDTH) {
-                CGFloat offsetX = CGRectGetMidX(button.frame) - SCREEN_WIDTH * 0.5;
+            if (self.contentSize.width > self.frame.size.width) {
+                CGFloat offsetX = CGRectGetMidX(button.frame) - self.frame.size.width * 0.5;
                 if (offsetX < 0) {
                     offsetX = 0;
                 }
-                CGFloat maxOffsetX = self.contentSize.width - SCREEN_WIDTH;
+                CGFloat maxOffsetX = self.contentSize.width - self.frame.size.width;
                 if (maxOffsetX < 0) {
                     maxOffsetX = 0;
                 }
